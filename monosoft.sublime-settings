@@ -1,0 +1,47 @@
+{
+	"monosoft-foreground" : "#929498",
+	"monosoft-background" : "#1f2022",
+	"monosoft-highlight"  : "#728492"
+}
+
+// Business class - Light
+// {
+//   "monosoft-foreground" : "#555555",
+//   "monosoft-background" : "#e1e5e9",
+//   "monosoft-highlight"  : "#54747D"
+// }
+
+// Business class - Dark
+// {
+//   "monosoft-foreground" : "#889099",
+//   "monosoft-background" : "#3a3a3a",
+//   "monosoft-highlight"  : "#91b5bd"
+// }
+
+// Military Midnight
+// {
+//   "monosoft-foreground" : "#566960",
+//   "monosoft-background" : "#0c1310",
+//   "monosoft-highlight"  : "#486c5a"
+// }
+
+// Paper Trail
+// {
+//  "monosoft-foreground" : "#47473a",
+//  "monosoft-background" : "#a0a084",
+//  "monosoft-highlight"  : "#361f0d"
+// }
+
+// lime-bath
+// {
+//  "monosoft-foreground" : "#5a737d",
+//  "monosoft-background" : "#dbf0eA",
+//  "monosoft-highlight"  : "#405058"
+// }
+
+// dark red-yellow
+// {
+//  "monosoft-foreground" : "#666552",
+//  "monosoft-background" : "#100d0d",
+//  "monosoft-highlight"  : "#6e5a52"
+// }
