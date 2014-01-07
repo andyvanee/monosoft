@@ -1,0 +1,10 @@
+[{
+  "id": "view",
+  "children": [
+    {
+      "id": "monosoft_commands",
+      "caption": "Monosoft",
+      "command": "monosoft_edit_colors"
+    }
+  ]
+}]
