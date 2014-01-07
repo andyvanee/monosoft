@@ -259,8 +259,9 @@ template = '''<?xml version="1.0" encoding="UTF-8"?>
 </plist>
 '''
 
+PLUGIN_FOLDER = os.path.dirname(os.path.realpath(__file__))
 SETTINGS_FILE = "monosoft.sublime-settings"
-settings = sublime.load_settings(SETTINGS_FILE)
+DEFAULT_SETTINGS = ['#222222', '#CCCCCC', '#555555']
 
 def hex2rgb(color):
     color = color.lstrip('#')
@@ -273,10 +274,21 @@ def mix(colorA, colorB, percent):
     c_rgb[0] = ((a_rgb[0] * percent) + b_rgb[0]) / percent
     return colorA
 
+def match_hex(color):
+    '''This should be better'''
+    return len(color) == 7
+
 def write_file():
+    settings = sublime.load_settings(SETTINGS_FILE)
     fg = settings.get('monosoft-foreground')
     bg = settings.get('monosoft-background')
     hh = settings.get('monosoft-highlight')
+
+    if match_hex(fg) and match_hex(bg) and match_hex(hh):
+        pass
+    else:
+        fg, bg, hh = DEFAULT_SETTINGS
+        sublime.status_message('Invalid monosoft settings')
 
     with open(sublime.packages_path()+'/monosoft/monosoft.tmTheme', 'w') as f:
         t = template
@@ -286,8 +298,21 @@ def write_file():
         sublime.status_message('theme file updated')
         f.write(t)
 
-settings.add_on_change('monosoft-foreground', write_file)
+def plugin_loaded():
+    '''Only runs properly in ST3?'''
+    settings = sublime.load_settings(SETTINGS_FILE)
+    settings.add_on_change('monosoft-foreground', write_file)
+    settings.add_on_change('monosoft-background', write_file)
+    settings.add_on_change('monosoft-highlight', write_file)
 
 class MonosoftCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         write_file()
+
+class MonosoftEditColors(sublime_plugin.TextCommand):
+    def run(self, edit):
+        monosoft_edit_color_scheme(self.view.window())
+
+def monosoft_edit_color_scheme(window):
+    settings_file = os.path.join(PLUGIN_FOLDER, SETTINGS_FILE)
+    window.open_file(settings_file)

@@ -1,22 +1,22 @@
-{
-	"monosoft-foreground" : "#929498",
-	"monosoft-background" : "#1f2022",
-	"monosoft-highlight"  : "#728492"
-}
+// {
+// 	"monosoft-foreground" : "#829498",
+// 	"monosoft-background" : "#1f2022",
+// 	"monosoft-highlight"  : "#728492"
+// }
 
 // Business class - Light
 // {
-//   "monosoft-foreground" : "#555555",
-//   "monosoft-background" : "#e1e5e9",
-//   "monosoft-highlight"  : "#54747D"
+//   "monosoft-foreground" : "#334A5A",
+//   "monosoft-background" : "#f9f9f8",
+//   "monosoft-highlight"  : "#24546D"
 // }
 
 // Business class - Dark
-// {
-//   "monosoft-foreground" : "#889099",
-//   "monosoft-background" : "#3a3a3a",
-//   "monosoft-highlight"  : "#91b5bd"
-// }
+{
+  "monosoft-foreground" : "#889099",
+  "monosoft-background" : "#2e2f2f",
+  "monosoft-highlight"  : "#91b5bd"
+}
 
 // Military Midnight
 // {
